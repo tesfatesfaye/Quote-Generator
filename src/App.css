@@ -46,9 +46,15 @@ font-family: 'Raleway', sans-serif;
 .hOne{
   text-align: center;
   font-weight: 400;
-  transition: all;
-  transition-duration: 600ms;
-  
+    opacity: 1; 
+    transition: all;
+    transition-delay: 0ms;
+    transition-duration: 100ms; ;
+
+}
+
+.hide{
+  opacity: 0;
 }
 .buttonDiv{
   display: flex;

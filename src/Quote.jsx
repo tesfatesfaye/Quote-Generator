@@ -4,20 +4,20 @@ import {ReactComponent as Quotes} from "./quotes.svg"
 function Quote(props){
     const ref=useRef(null)
    
-    useEffect(()=>{
+    // useEffect(()=>{
         
-        ref.current.classList.add("invisible")
-        setTimeout(()=>{
+    //     ref.current.classList.add("hide")
+    //     setTimeout(()=>{
           
-            ref.current.classList.remove("invisible")
-        },200)
+    //         ref.current.classList.remove("hide")
+    //     },600)
        
-    },[props.text])
+    // },[props.text])
 
     return(
         <div className='quoteDiv'> 
         
-        <h2 ref={ref}className='hOne' style={{color:props.colorValue}}><Quotes fill={props.colorValue} fillOpacity={1}stroke={props.colorValue} width={20} height={30} />  {props.text}</h2>
+        <h2 className='hOne' ref={ref} style={{color:props.colorValue}}><Quotes fill={props.colorValue} fillOpacity={1}stroke={props.colorValue} width={20} height={30} />  {props.text}</h2>
        
         </div>
     )
