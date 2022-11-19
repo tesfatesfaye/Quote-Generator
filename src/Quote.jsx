@@ -1,19 +1,9 @@
 import './App.css'
-import { useEffect ,useRef} from 'react'
 import {ReactComponent as Quotes} from "./quotes.svg"
 function Quote(props){
-    const ref=useRef(null)
    
-    // useEffect(()=>{
-        
-    //     ref.current.classList.add("hide")
-    //     setTimeout(()=>{
-          
-    //         ref.current.classList.remove("hide")
-    //     },600)
-       
-    // },[props.text])
-
+   
+   
     return(
         <div className='quoteDiv'> 
         

@@ -66,7 +66,7 @@ function nextQuote(){
           />
         <div className={`author  ${changeClass ? "hide" : ""}`}  style={{color:colorValue}}><span >- {quote.author}</span></div>
       <div className='buttonDiv'>
-        <div className='links'  style={{backgroundColor: colorValue}}> <Tumbler fill="white"  height={25}/></div>
+                <div className='links'  style={{backgroundColor: colorValue}}> <Tumbler fill="white"  height={25}/></div>
         <div className='links'  style={{backgroundColor: colorValue}}>  <Twitter fill="white" height={25} /></div>
         <button className='NextQuote' style={{backgroundColor:colorValue}} onClick={nextQuote}>Next Quote</button>
         </div>  
