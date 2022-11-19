@@ -9,6 +9,7 @@ function App() {
  const[quote,setQuote]=useState({})
  const[quoteData, setQuoteData]=useState(()=>[])
  const [colorValue,setColorValue]=useState(randomNumber())
+ const[changeClass,setChangeClass]=useState(false)
   const ref=useRef(null)
   useEffect(()=>{
    async function fetchReq(){
@@ -40,9 +41,16 @@ function App() {
 function nextQuote(){
   const randomValue=Math.floor(Math.random()*quoteData.length-1)
   const value=quoteData[randomValue]
-  setQuote(value)
-  setColorValue(randomNumber())
-
+  setChangeClass(prev=>!prev)
+  setTimeout(() => {
+    setQuote(value)
+    setColorValue(randomNumber())
+   
+  }, 600);
+ 
+  setTimeout(() => {
+    setChangeClass(prev=>!prev)
+  }, 600);
 
 }
  
@@ -53,10 +61,10 @@ function nextQuote(){
       <Quote
       {...quote}
        colorValue={colorValue}
-       ref={ref}
+       changeClass={changeClass}
        
           />
-        <div className='author'  style={{color:colorValue}}><span >- {quote.author}</span></div>
+        <div className={`author  ${changeClass ? "hide" : ""}`}  style={{color:colorValue}}><span >- {quote.author}</span></div>
       <div className='buttonDiv'>
         <div className='links'  style={{backgroundColor: colorValue}}> <Tumbler fill="white"  height={25}/></div>
         <div className='links'  style={{backgroundColor: colorValue}}>  <Twitter fill="white" height={25} /></div>
