@@ -28,10 +28,15 @@ function App() {
     if(quoteData.length>0){
     const randomValue=Math.floor(Math.random()*quoteData.length)
     setQuote(quoteData[randomValue])
+    
    
   }
  
  },[quoteData])
+
+ useEffect(()=>{
+  document.body.style.backgroundColor=colorValue
+ },[quote])
 
   function randomNumber(){
     const randomNum=()=>Math.floor(Math.random()*128)
@@ -55,7 +60,7 @@ function nextQuote(){
 }
  
   return (
-    <div className="App" style={{backgroundColor: colorValue}}>
+    <div className="App" >
       <div className='wrapper'>
     
       <Quote
