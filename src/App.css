@@ -84,8 +84,13 @@ transition-delay: 200ms;
   padding: 4px;
   border-radius: 3px;
   cursor: pointer;
+ 
 }
 
+.links :hover{
+  
+  opacity: 0.7;
+}
 .author{
   display: block;
   margin-left: auto;
@@ -115,4 +120,3 @@ a,a:hover,a:active{
 display: none;
  
 }
-

@@ -1,4 +1,4 @@
-import { useState,useEffect ,useRef} from 'react'
+import { useState,useEffect,useRef} from 'react'
 import {ReactComponent as Tumbler}  from'./tumbler.svg'
 import {ReactComponent as Twitter} from './twitter.svg'
 import Quote from './Quote'
@@ -10,7 +10,8 @@ function App() {
  const[quoteData, setQuoteData]=useState(()=>[])
  const [colorValue,setColorValue]=useState(randomNumber())
  const[changeClass,setChangeClass]=useState(false)
-  const ref=useRef(null)
+ const [hovered, setHovered]=useState(false)
+const ref=useRef(null)
   useEffect(()=>{
    async function fetchReq(){
     const res= await fetch("https://type.fit/api/quotes");
@@ -58,7 +59,12 @@ function nextQuote(){
   }, 600);
 
 }
+function checkHover(){
+  setHovered(prev=>!prev)
+}
  
+const darkerCol=`rgb(180,180,180)`
+
   return (
     <div className="App" >
       <div className='wrapper'>
@@ -73,7 +79,7 @@ function nextQuote(){
       <div className='buttonDiv'>
                 <div className='links'  style={{backgroundColor: colorValue}}> <Tumbler fill="white"  height={25}/></div>
         <div className='links'  style={{backgroundColor: colorValue}}>  <Twitter fill="white" height={25} /></div>
-        <button className='NextQuote' style={{backgroundColor:colorValue}} onClick={nextQuote}>Next Quote</button>
+        <button className='NextQuote'  onMouseEnter={checkHover} onMouseLeave={checkHover}style={{backgroundColor:colorValue, color: hovered ? darkerCol : "white"}} onClick={nextQuote}><span className='next'>Next Quote</span></button>
         </div>  
         </div>
         <div className='footer' > <span>by</span><a href="https://github.com/tesfatesfaye">   Tesfa</a></div>
