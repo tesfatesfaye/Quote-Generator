@@ -63,7 +63,7 @@ function checkHover(){
   setHovered(prev=>!prev)
 }
  
-const darkerCol=`rgb(180,180,180)`
+
 
   return (
     <div className="App" >
@@ -79,7 +79,7 @@ const darkerCol=`rgb(180,180,180)`
       <div className='buttonDiv'>
                 <div className='links'  style={{backgroundColor: colorValue}}> <Tumbler fill="white"  height={25}/></div>
         <div className='links'  style={{backgroundColor: colorValue}}>  <Twitter fill="white" height={25} /></div>
-        <button className='NextQuote'  onMouseEnter={checkHover} onMouseLeave={checkHover}style={{backgroundColor:colorValue, color: hovered ? darkerCol : "white"}} onClick={nextQuote}><span className='next'>Next Quote</span></button>
+        <button className='NextQuote'  onMouseEnter={checkHover} onMouseLeave={checkHover}style={{backgroundColor:colorValue}} onClick={nextQuote}>Next Quote</button>
         </div>  
         </div>
         <div className='footer' > <span>by</span><a href="https://github.com/tesfatesfaye">   Tesfa</a></div>
