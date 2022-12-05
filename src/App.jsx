@@ -10,7 +10,7 @@ function App() {
  const[quoteData, setQuoteData]=useState(()=>[])
  const [colorValue,setColorValue]=useState(randomNumber())
  const[changeClass,setChangeClass]=useState(false)
- const [hovered, setHovered]=useState(false)
+
 const ref=useRef(null)
   useEffect(()=>{
    async function fetchReq(){
@@ -59,10 +59,7 @@ function nextQuote(){
   }, 600);
 
 }
-function checkHover(){
-  setHovered(prev=>!prev)
-}
- 
+
 
 
   return (
@@ -79,7 +76,7 @@ function checkHover(){
       <div className='buttonDiv'>
                 <div className='links'  style={{backgroundColor: colorValue}}> <Tumbler fill="white"  height={25}/></div>
         <div className='links'  style={{backgroundColor: colorValue}}>  <Twitter fill="white" height={25} /></div>
-        <button className='NextQuote'  onMouseEnter={checkHover} onMouseLeave={checkHover}style={{backgroundColor:colorValue}} onClick={nextQuote}>Next Quote</button>
+        <button className='NextQuote'  style={{backgroundColor:colorValue}} onClick={nextQuote}>Next Quote</button>
         </div>  
         </div>
         <div className='footer' > <span>by</span><a href="https://github.com/tesfatesfaye">   Tesfa</a></div>
