@@ -1,5 +1,5 @@
 import './App.css'
-import {ReactComponent as Quotes} from "./quotes.svg"
+import {ReactComponent as Quotes} from "./assets/quotes.svg"
 function Quote(props){
    
    

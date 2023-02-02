@@ -1,6 +1,6 @@
 import { useState,useEffect,useRef} from 'react'
-import {ReactComponent as Tumbler}  from'./tumbler.svg'
-import {ReactComponent as Twitter} from './twitter.svg'
+import {ReactComponent as Tumbler}  from'./assets/tumbler.svg'
+import {ReactComponent as Twitter} from './assets/twitter.svg'
 import Quote from './Quote'
 import './App.css'
 
