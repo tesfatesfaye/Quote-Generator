@@ -20,7 +20,7 @@ transition-delay: 200ms;
 .wrapper{
   width: 450px;
   height: auto;
-  background-color: white;
+  background-color: whitesmoke;
   padding: 40px 50px;
   display: flex;
   flex-direction: column;
