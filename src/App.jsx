@@ -1,6 +1,5 @@
-import { useState,useEffect,useRef} from 'react'
+import { useState,useEffect,useRef, Component} from 'react'
 import {FaTumblr} from 'react-icons/fa'
-import {ReactComponent as Tumbler}  from'./assets/tumbler.svg'
 import {ReactComponent as Twitter} from './assets/twitter.svg'
 import Quote from './Quote'
 import './App.css'
@@ -13,7 +12,8 @@ function App() {
  const[changeClass,setChangeClass]=useState(false)
 
 const ref=useRef(null)
-  useEffect(()=>{
+ 
+useEffect(()=>{
    async function fetchReq(){
     const res= await fetch("https://type.fit/api/quotes");
     const data=await res.json()
@@ -35,6 +35,9 @@ const ref=useRef(null)
   }
  
  },[quoteData])
+ const Components={
+  FaTumblr:()=>FaTumblr
+ }
 
  useEffect(()=>{
   document.body.style.backgroundColor=colorValue
@@ -75,10 +78,11 @@ function nextQuote(){
           />
         <div className={`author  ${changeClass ? "hide" : ""}`}  style={{color:colorValue}}><span >- {quote.author}</span></div>
       <div className='buttonDiv'>
-                <div className='links'  style={{backgroundColor: colorValue}}> <FaTumblr color='white' style={{fill: 'white'}} size='1.5rem'/></div>
+                <div className='links'  style={{backgroundColor: colorValue}}> <FaTumblr color='white' style={{fill: 'white'}} htmlColor ="pink" size='1.5rem'/></div>
         <div className='links'  style={{backgroundColor: colorValue}}>  <Twitter fill="white" height={25} /></div>
         <button className='NextQuote'  style={{backgroundColor:colorValue}} onClick={nextQuote}>Next Quote</button>
         </div>  
+        {Components.FaTumblr}
         </div>
         <div className='footer' > <span>by</span><a href="https://github.com/tesfatesfaye">   Tesfa</a></div>
       </div>
